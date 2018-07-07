@@ -1,0 +1,4 @@
+include flashlearn/schema.sql
+graft flashlearn/static
+graft flashlearn/templates
+global-exclude *.pyc
