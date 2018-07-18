@@ -1,1 +1,24 @@
-<h1>hi!</h1>
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Flashcards{% endblock %}</h1>
+  {% if g.user %}
+    <a class="action" href="{{ url_for('blog.create') }}">New</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for flashcard in flashcards %}
+    <article class="post">
+      <header>
+        <div>
+          <h1>{{ flashcard['question'] }}</h1>
+        </div>
+      </header>
+      <p class="body">{{ flashcard['answer'] }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
