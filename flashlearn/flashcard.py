@@ -19,3 +19,13 @@ def index():
     ).fetchall()
     return render_template('flashcard/index.html', flashcards=flashcards)
 
+
+# This will be the main page of all project
+@bp.route('/categories/')
+def categories():
+    return 'categories here'
+
+# TODO learning interface
+@bp.route('/learning/')
+def learning():
+    return 'learing here'
