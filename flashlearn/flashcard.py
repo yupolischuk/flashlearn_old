@@ -29,3 +29,4 @@ def categories():
 @bp.route('/learning/')
 def learning():
     return 'learing here'
+
